@@ -58,9 +58,15 @@ createApp({
     methods: {
         prevButton(){
             this.activeImage--;
+            if (this.activeImage < 0) {
+                this.activeImage = this.movie.image.length - 1;
+            };
         },
         nextButton(){
             this.activeImage++;
+            if (this.activeImage > this.movie.image.length - 1) {
+                this.activeImage = 0;
+            };
         }
     }
 }).mount('#app');
