@@ -29,12 +29,12 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevButton"></div>
                     <div class="next" @click="nextButton"></div>
-                    <!-- <div class="thumb active">
-                        <img :src="movie.image[activeImage]" alt="Svezia" />
-                    </div> -->
-                    <div class="thumb" v-for="image in movie.image">
+                    <div class="thumb" v-for="(image, index) in movie.image" @click="imageClicked(index, $event)">
                         <img :src="image" alt="Ratchet & Clank" />
                     </div>
+                    <!-- <div class="thumb" v-for="image in movie.image">
+                        <img :src="image" alt="Ratchet & Clank" />
+                    </div> -->
                 </div>
 
             </div>
